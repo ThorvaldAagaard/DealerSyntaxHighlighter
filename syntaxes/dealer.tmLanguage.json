@@ -1,0 +1,136 @@
+{
+	"$schema": "https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json",
+	"name": "Dealerscript",
+	"patterns": [
+		{
+			"include": "#comments"
+		},
+		{
+			"include": "#keywords"
+		},
+		{
+			"include": "#constants"
+		},
+		{
+			"include": "#boolean"
+		},
+		{
+			"include": "#functions"
+		},
+		{
+			"include": "#variables"
+		},
+		{
+			"include": "#numbers"
+		},
+		{
+			"include": "#strings"
+		},
+		{
+			"include": "#operators"
+		},
+		{
+			"include": "#predeal"
+		},
+		{
+			"include": "#hands"
+		},
+		{
+			"include": "#cards"
+		}
+	],
+	"repository": {
+		"comments": {
+			"name": "comment.line.dealer",
+			"match": "(//.*|#.*)"
+		},
+		"keywords": {
+			"patterns": [
+				{
+					"name": "keyword.control.dealer",
+					"match": "\\b(generate|produce|condition|action|predeal|dealer|\\+any|-any)\\b"
+				}
+			]
+		},
+		"constants": {
+			"patterns": [
+				{
+					"name": "keyword.constant.dealer",
+					"match": "\\b(north|east|south|west|spades|hearts|diamonds|clubs|printpbn|average|frequency)\\b(?!\\()"
+				}
+			]
+		},
+		"boolean": {
+			"patterns": [
+				{
+					"name": "constant.language.boolean.dealer",
+					"match": "\\b(true|false|not|and|or)\\b"
+				}
+			]
+		},
+		"functions": {
+			"patterns": [
+				{
+					"name": "entity.name.function.dealer",
+					"match": "\\b(spades|hearts|diamonds|clubs|shape|hcp|controls|losers|hascard|top1|top2|top3|top4|top5)\\b(?=\\()"
+				}
+			]
+		},
+		"variables": {
+			"patterns": [
+				{
+					"name": "entity.name.variable.dealer",
+					"match": "\\b([a-zA-Z_][a-zA-Z0-9_]*)\\b(?!\\s*\\()"
+				}
+			]
+		},
+		"numbers": {
+			"patterns": [
+				{
+					"name": "constant.numeric.dealer",
+					"match": "\\b\\d+\\b"
+				}
+			]
+		},
+		"predeal": {
+			"patterns": [
+				{
+					"name": "keyword.control.dealer",
+					"match": "^predeal\\s+(north|south|east|west)\\s+([2-9TJQKA]{1}[CDHS]{1}[2-9TJQKA]{1}\\.[2-9TJQKA]{1}[CDHS]{1}[2-9TJQKA]{1}\\.[2-9TJQKA]{1}[CDHS]{1}[2-9TJQKA]{1}\\.[2-9TJQKA]{1}[CDHS]{1}[2-9TJQKA]{1})$"
+				}
+			]
+		},
+		"hands": {
+			"patterns": [
+				{
+					"name": "entity.name.hand.dealer",
+					"match": "\\b([2-9TJQKA]{1}[CDHS]{1})\\b"
+				}
+			]
+		},
+		"cards": {
+		    "name": "constant.language.card.dealer",
+    		"match": "\\b(A|K|Q|J|T|9|8|7|6|5|4|3|2)(S|H|D|C)\\b"
+		},
+		"strings": {
+			"name": "string.quoted.double.dealer",
+			"begin": "\"",
+			"end": "\"",
+			"patterns": [
+				{
+					"name": "constant.character.escape.dealer",
+					"match": "\\\\."
+				}
+			]
+		},
+		"operators": {
+			"patterns": [
+				{
+					"name": "punctuation.separator.dealer",
+					"match": "[><=+\\-]"
+				}
+			]
+		}
+	},
+	"scopeName": "source.dealer"
+}

@@ -1,0 +1,43 @@
+{
+  "name": "dealer",
+  "displayName": "Dealer Syntax Highlighting",
+  "description": "Syntax highlighting for DealerScript used in the Dealer application.",
+  "publisher": "aalborgdata",
+  "version": "0.1.0",
+  "icon": "dsh.png",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ThorvaldAagaard/DealerSyntaxHighlighter.git"
+  },
+  "keywords": ["syntax", "highlighting", "dealer"],
+  "author": "Thorvald Aagaard",
+  "license": "Unlicense",
+  "engines": {
+    "vscode": "^1.95.0"
+  },
+  "categories": [
+    "Programming Languages"
+  ],
+  "contributes": {
+    "languages": [
+      {
+        "id": "dealer",
+        "aliases": [
+          "Dealerscript",
+          "dealer"
+        ],
+        "extensions": [
+          ".dlr"
+        ],
+        "configuration": "./language-configuration.json"
+      }
+    ],
+    "grammars": [
+      {
+        "language": "dealer",
+        "scopeName": "source.dealer",
+        "path": "./syntaxes/dealer.tmLanguage.json"
+      }
+    ]
+  }
+}
